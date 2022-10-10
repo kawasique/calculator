@@ -1,0 +1,43 @@
+.controls {
+  height: fit-content;
+  margin-top: 2px;
+  width: 100%;
+  display: flex;
+}
+
+.controls > * {
+  margin: 2px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.controls > span {
+  font-size: 1.2rem;
+}
+
+.controlButton {
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+
+  width: 35px;
+  height: 35px;
+}
+
+.controlButton > svg {
+  display: block;
+}
+
+.controlButton:hover {
+  background-color: #0001;
+}
+
+.controlButton:active {
+  background-color: #0002;
+}
+
+.history {
+  margin-left: auto;
+}

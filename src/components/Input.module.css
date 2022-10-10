@@ -1,0 +1,38 @@
+.input {
+  box-sizing: border-box;
+
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+}
+
+.number {
+  border: 1px solid #00000010;
+  border-radius: 5px;
+  background-color: white;
+
+  margin: 2px;
+  min-height: 4rem;
+  font-size: 1.5rem;
+  color: black;
+
+  box-shadow: 1px 1px 0px 0px #00000025;
+
+  transition: background-color 0.35s;
+}
+
+.function {
+  background-color: #f3faff77;
+}
+
+.equal {
+  background-color: rgba(70, 209, 255, 220);
+}
+
+.number:hover {
+  background-color: rgb(245, 246, 248);
+}
+.number:active {
+  background-color: rgb(186, 229, 255);
+}
