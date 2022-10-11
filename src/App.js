@@ -18,7 +18,7 @@ function App() {
     let temp = "";
     let result = "0";
 
-    if (inputString == "Error" || value == "C") {
+    if (inputString === "Error" || value === "C") {
       setPrevInput("");
       setOperation("");
       setInputString("0");
@@ -28,9 +28,9 @@ function App() {
 
     if (numbers.includes(value)) {
       if (inputString.length > 16) return;
-      if (value == "." && inputString.indexOf(".") != -1) return;
+      if (value === "." && inputString.indexOf(".") !== -1) return;
 
-      if (inputString == "0") {
+      if (inputString === "0") {
         setInputString(value);
         return;
       }
@@ -38,12 +38,12 @@ function App() {
       setInputString(inputString + value);
       return;
     }
-    if (value == "<") {
+    if (value === "<") {
       let tmp = inputString.slice(0, -1);
       setInputString(tmp ? tmp : "0");
       return;
     }
-    if (value == "CE") {
+    if (value === "CE") {
       setInputString("0");
       return;
     }
@@ -54,25 +54,25 @@ function App() {
       return;
     }
 
-    if (value == "√") {
+    if (value === "√") {
       temp = "sqrt(" + inputString + ")";
       result = Math.sqrt(inputString);
-    } else if (value == "1/x") {
+    } else if (value === "1/x") {
       temp = "1/(" + inputString + ")";
       result = 1 / Number(inputString);
-    } else if (value == "x²") {
+    } else if (value === "x²") {
       temp = "(" + inputString + ")^2";
       result = Math.pow(Number(inputString), 2);
-    } else if (value == "=") {
+    } else if (value === "=") {
       temp = prevInput + operation + inputString;
 
-      if (operation == "+") {
+      if (operation === "+") {
         result = Number(prevInput) + Number(inputString);
-      } else if (operation == "-") {
+      } else if (operation === "-") {
         result = Number(prevInput) - Number(inputString);
-      } else if (operation == "×") {
+      } else if (operation === "×") {
         result = Number(prevInput) * Number(inputString);
-      } else if (operation == "÷") {
+      } else if (operation === "÷") {
         result = Number(prevInput) / Number(inputString);
       } else {
         result = "0";
@@ -83,7 +83,7 @@ function App() {
     setPrevInput(temp);
     setOperation("");
     if (temp) {
-      history.push(temp + result);
+      setHistory([...history, temp]);
       console.log(temp + "=" + result);
     }
   }

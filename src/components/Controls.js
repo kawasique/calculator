@@ -4,7 +4,7 @@ import styles from "./Controls.module.css"
 function ControlButton({ className = "", icon, ...props }) {
   return (
     <button className={styles.controlButton + " " + className}>
-      <img src={icon} />
+      <img src={icon} alt="" />
     </button>
   );
 }
